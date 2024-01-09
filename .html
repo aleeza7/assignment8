@@ -1,0 +1,82 @@
+<html> 
+<head> 
+<script> 
+var die1Value = 6;
+var die2Value = 6;
+var die3Value = 6;
+var die4Value = 6;
+var die5Value = 6;
+  
+var die6Value = 6;
+var die7Value = 6;
+var die8Value = 6;
+var die9Value = 6;
+var die10Value = 6;
+
+var computerWinCount = 0;
+var humanWinCount = 0;
+  
+var rollCount = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+  function rollDice() {
+
+die1Value = rollCount[Math.floor(Math.random() * 6) + 1];
+die2Value = rollCount[Math.floor(Math.random() * 6) + 1];
+die3Value = rollCount[Math.floor(Math.random() * 6) + 1];
+die4Value = rollCount[Math.floor(Math.random() * 6) + 1];
+die5Value = rollCount[Math.floor(Math.random() * 6) + 1];
+
+die6Value = rollCount[Math.floor(Math.random() * 6) + 1];
+die7Value = rollCount[Math.floor(Math.random() * 6) + 1];
+die8Value = rollCount[Math.floor(Math.random() * 6) + 1];
+die9Value = rollCount[Math.floor(Math.random() * 6) + 1];
+die10Value = rollCount[Math.floor(Math.random() * 6) + 1];
+
+  
+document.getElementById("rollImage1").src = "dice" + die1Value + ".jpg";
+document.getElementById("rollImage2").src = "dice" + die2Value + ".jpg";
+document.getElementById("rollImage3").src = "dice" + die3Value + ".jpg";
+document.getElementById("rollImage4").src = "dice" + die4Value + ".jpg";
+document.getElementById("rollImage5").src = "dice" + die5Value + ".jpg";
+document.getElementById("rollImage6").src = "dice" + die6Value + ".jpg";
+document.getElementById("rollImage7").src = "dice" + die7Value + ".jpg";
+document.getElementById("rollImage8").src = "dice" + die8Value + ".jpg";
+document.getElementById("rollImage9").src = "dice" + die9Value + ".jpg";
+document.getElementById("rollImage10").src = "dice" + die10Value + ".jpg";
+
+finalRollHuman = die1Value + die2Value + die3Value + die4Value + die5Value;
+document.getElementById("rollHumanDisplay").innerHTML = "You've rolled a " + finalRollHuman;
+
+finalRollComputer = die6Value + die7Value + die8Value + die9Value + die10Value;
+document.getElementById("rollComputerDisplay").innerHTML = "The Computer rolled a " + finalRollComputer; 
+
+    if (finalRollComputer==21) {
+      document.getElementById("winDisplay").innerHTML = "Computer Wins!";
+      computerWinCount++;
+    }
+      if (finalRollHuman==21) {
+      document.getElementById("winDisplay").innerHTML = "Human Wins!";
+      humanWinCount++;
+  
+    }
+     if else (finalRollHuman==21 && finalRollComputer==21) {
+      document.getElementById("winDisplay").innerHTML = "Tie!";
+    }
+
+    document.getElementById("computerWins").innerHTML = "Score: " + computerWinCount;
+    document.getElementById("humanWins").innerHTML = "Score: " + humanWinCount;
+
+    //roll again is disabled 
+    // create new round function
+                 
+                }
+
+  
+
+</script>
+
+
+</head>
+
+
+</html>
