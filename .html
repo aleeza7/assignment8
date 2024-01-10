@@ -1,5 +1,92 @@
 <html> 
 <head> 
+  <style> 
+  .title {grid-row-start: 1; 
+        grid-row-end: 9;    
+        grid-column-start: 1; 
+        grid-column-end: 2;
+       }
+ 
+.1Div {grid-row-start: 1; 
+      grid-row-end: 2; 
+      grid-column-start: 2; 
+      grid-column-end: 3;}
+
+.2Div {grid-row-start: 3;  
+      grid-row-end: 4; 
+      grid-column-start: 2; 
+      grid-column-end: 3; } 
+
+    .3Div {grid-row-start: 4;  
+      grid-row-end: 5; 
+      grid-column-start: 2; 
+      grid-column-end: 3; } 
+    
+    .4Div {grid-row-start: 5;  
+      grid-row-end: 6; 
+      grid-column-start: 2; 
+      grid-column-end: 3; } 
+
+     .5Div {grid-row-start: 6;  
+      grid-row-end: 7; 
+      grid-column-start: 2; 
+      grid-column-end: 3; } 
+
+     .6Div {grid-row-start: 7;  
+      grid-row-end: 8; 
+      grid-column-start: 2; 
+      grid-column-end: 3; } 
+
+     .middleDiv {grid-row-start: 1;  
+      grid-row-end: 4; 
+      grid-column-start: 3; 
+      grid-column-end: 4; } 
+    // start here
+      
+.4 {grid-row-start: 5; 
+    grid-row-end: 6; 
+    grid-column-start: 1; 
+    grid-column-end: 2;  }
+
+.5 {grid-row-start: 3; 
+      grid-row-end: 4; 
+      grid-column-start: 3; 
+      grid-column-end: 4; }
+
+.6 {grid-row-start: 4; 
+      grid-row-end: 5; 
+      grid-column-start: 3; 
+      grid-column-end: 4;}
+
+.7 {grid-row-start: 4; 
+         grid-row-end: 5;
+         grid-column-start: 1; 
+         grid-column-end: 4; 
+         color: #00008a; }
+
+.8   {grid-row-start: 6; 
+         grid-row-end: 7; 
+         grid-column-start: 1; 
+         grid-column-end: 2;}
+
+.9  {grid-row-start: 6; 
+          grid-row-end: 7; 
+          grid-column-start: 2; 
+          grid-column-end: 3; }
+
+.10{grid-row-start: 6; 
+            grid-row-end: 7; 
+            grid-column-start: 3; 
+            grid-column-end: 4; }
+
+.11 {grid-row-start: 8; 
+        grid-row-end: 9; 
+        grid-column-start: 1; 
+        grid-column-end: 4; }
+</style>
+  
+  
+  </style>
 <script> 
 var die1Value = 6;
 var die2Value = 6;
@@ -65,11 +152,17 @@ document.getElementById("rollComputerDisplay").innerHTML = "The Computer rolled 
 
     document.getElementById("computerWins").innerHTML = "Score: " + computerWinCount;
     document.getElementById("humanWins").innerHTML = "Score: " + humanWinCount;
+    ocument.getElementById("buttonSeven").disabled = true; 
 
-    //roll again is disabled 
-    // create new round function
+    
                  
                 }
+  function clearRound() {
+    document.getElementById("winDisplay").innerHTML = " "; 
+    document.getElementById("rollComputerDisplay").innerHTML = "The Computer rolled a...";
+    documennt.getElementById("").disabled = false;
+   // in the button disabled="true"
+  } 
 
   
 
@@ -77,6 +170,41 @@ document.getElementById("rollComputerDisplay").innerHTML = "The Computer rolled 
 
 
 </head>
-
+<body> 
+<p id = "winDisplay"> Roll Against A Computer - Goal is to Roll a 21 </p>
+  <div> 
+  <img id = "rollImage1" src = "dice1.jpg" height = 100px width = 100px> 
+  </div>
+   <div>
+  <img id = "rollImage2" src = "dice1.jpg" height = 100px width = 100px> 
+   </div> 
+   <div> 
+  <img id = "rollImage3" src = "dice1.jpg" height = 100px width = 100px> 
+   </div>
+   <div>
+  <img id = "rollImage4" src = "dice1.jpg" height = 100px width = 100px>
+   </div>
+   <div>
+  <img id = "rollImage5" src = "dice1.jpg" height = 100px width = 100px> 
+   </div>
+   <div>
+  <img id = "rollImage6" src = "dice1.jpg" height = 100px width = 100px>
+   </div>
+   <div>
+  <img id = "rollImage7" src = "dice1.jpg" height = 100px width = 100px> 
+   </div>
+   <div>
+  <img id = "rollImage8" src = "dice1.jpg" height = 100px width = 100px> 
+   </div>
+   <div>
+  <img id = "rollImage9" src = "dice1.jpg" height = 100px width = 100px> 
+   </div>
+    <div>
+  <img id = "rollImage10" src = "dice1.jpg" height = 100px width = 100px> 
+    </div>
+ 
+ 
+</body>
 
 </html>
+
