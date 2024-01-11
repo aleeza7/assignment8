@@ -1,92 +1,5 @@
 <html> 
 <head> 
-  <style> 
-  .title {grid-row-start: 1; 
-        grid-row-end: 9;    
-        grid-column-start: 1; 
-        grid-column-end: 2;
-       }
- 
-.1Div {grid-row-start: 1; 
-      grid-row-end: 2; 
-      grid-column-start: 2; 
-      grid-column-end: 3;}
-
-.2Div {grid-row-start: 3;  
-      grid-row-end: 4; 
-      grid-column-start: 2; 
-      grid-column-end: 3; } 
-
-    .3Div {grid-row-start: 4;  
-      grid-row-end: 5; 
-      grid-column-start: 2; 
-      grid-column-end: 3; } 
-    
-    .4Div {grid-row-start: 5;  
-      grid-row-end: 6; 
-      grid-column-start: 2; 
-      grid-column-end: 3; } 
-
-     .5Div {grid-row-start: 6;  
-      grid-row-end: 7; 
-      grid-column-start: 2; 
-      grid-column-end: 3; } 
-
-     .6Div {grid-row-start: 7;  
-      grid-row-end: 8; 
-      grid-column-start: 2; 
-      grid-column-end: 3; } 
-
-     .middleDiv {grid-row-start: 1;  
-      grid-row-end: 4; 
-      grid-column-start: 3; 
-      grid-column-end: 4; } 
-    // start here
-      
-.4 {grid-row-start: 5; 
-    grid-row-end: 6; 
-    grid-column-start: 1; 
-    grid-column-end: 2;  }
-
-.5 {grid-row-start: 3; 
-      grid-row-end: 4; 
-      grid-column-start: 3; 
-      grid-column-end: 4; }
-
-.6 {grid-row-start: 4; 
-      grid-row-end: 5; 
-      grid-column-start: 3; 
-      grid-column-end: 4;}
-
-.7 {grid-row-start: 4; 
-         grid-row-end: 5;
-         grid-column-start: 1; 
-         grid-column-end: 4; 
-         color: #00008a; }
-
-.8   {grid-row-start: 6; 
-         grid-row-end: 7; 
-         grid-column-start: 1; 
-         grid-column-end: 2;}
-
-.9  {grid-row-start: 6; 
-          grid-row-end: 7; 
-          grid-column-start: 2; 
-          grid-column-end: 3; }
-
-.10{grid-row-start: 6; 
-            grid-row-end: 7; 
-            grid-column-start: 3; 
-            grid-column-end: 4; }
-
-.11 {grid-row-start: 8; 
-        grid-row-end: 9; 
-        grid-column-start: 1; 
-        grid-column-end: 4; }
-</style>
-  
-  
-  </style>
 <script> 
 var die1Value = 6;
 var die2Value = 6;
@@ -103,21 +16,21 @@ var die10Value = 6;
 var computerWinCount = 0;
 var humanWinCount = 0;
   
-var rollCount = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+var rollCountArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
   function rollDice() {
 
-die1Value = rollCount[Math.floor(Math.random() * 6) + 1];
-die2Value = rollCount[Math.floor(Math.random() * 6) + 1];
-die3Value = rollCount[Math.floor(Math.random() * 6) + 1];
-die4Value = rollCount[Math.floor(Math.random() * 6) + 1];
-die5Value = rollCount[Math.floor(Math.random() * 6) + 1];
+die1Value = [Math.floor(Math.random() * 6) + 1];
+die2Value = [Math.floor(Math.random() * 6) + 1];
+die3Value = [Math.floor(Math.random() * 6) + 1];
+die4Value = [Math.floor(Math.random() * 6) + 1];
+die5Value = [Math.floor(Math.random() * 6) + 1];
 
-die6Value = rollCount[Math.floor(Math.random() * 6) + 1];
-die7Value = rollCount[Math.floor(Math.random() * 6) + 1];
-die8Value = rollCount[Math.floor(Math.random() * 6) + 1];
-die9Value = rollCount[Math.floor(Math.random() * 6) + 1];
-die10Value = rollCount[Math.floor(Math.random() * 6) + 1];
+die6Value = [Math.floor(Math.random() * 6) + 1];
+die7Value = [Math.floor(Math.random() * 6) + 1];
+die8Value = [Math.floor(Math.random() * 6) + 1];
+die9Value = [Math.floor(Math.random() * 6) + 1];
+die10Value = [Math.floor(Math.random() * 6) + 1];
 
   
 document.getElementById("rollImage1").src = "dice" + die1Value + ".jpg";
@@ -146,22 +59,46 @@ document.getElementById("rollComputerDisplay").innerHTML = "The Computer rolled 
       humanWinCount++;
   
     }
-     if else (finalRollHuman==21 && finalRollComputer==21) {
+     else if (finalRollHuman==21 && finalRollComputer==21) {
       document.getElementById("winDisplay").innerHTML = "Tie!";
     }
 
     document.getElementById("computerWins").innerHTML = "Score: " + computerWinCount;
     document.getElementById("humanWins").innerHTML = "Score: " + humanWinCount;
-    ocument.getElementById("buttonSeven").disabled = true; 
+    document.getElementById("rollButton").enabled = false; 
+    
 
     
                  
                 }
+  
   function clearRound() {
     document.getElementById("winDisplay").innerHTML = " "; 
-    document.getElementById("rollComputerDisplay").innerHTML = "The Computer rolled a...";
-    documennt.getElementById("").disabled = false;
-   // in the button disabled="true"
+    document.getElementById("rollComputerDisplay").innerHTML = "Computer Total:";
+     document.getElementById("rollButton").enabled = true; 
+die1Value = 0;
+die2Value = 0;
+die3Value = 0;
+die4Value = 0;
+die5Value = 0;
+
+die6Value = 0;
+die7Value = 0;
+die8Value = 0;
+die9Value = 0;
+die10Value = 0;
+document.getElementById("rollImage1").src = "dice" + die1Value + ".jpg";
+document.getElementById("rollImage2").src = "dice" + die2Value + ".jpg";
+document.getElementById("rollImage3").src = "dice" + die3Value + ".jpg";
+document.getElementById("rollImage4").src = "dice" + die4Value + ".jpg";
+document.getElementById("rollImage5").src = "dice" + die5Value + ".jpg";
+document.getElementById("rollImage6").src = "dice" + die6Value + ".jpg";
+document.getElementById("rollImage7").src = "dice" + die7Value + ".jpg";
+document.getElementById("rollImage8").src = "dice" + die8Value + ".jpg";
+document.getElementById("rollImage9").src = "dice" + die9Value + ".jpg";
+document.getElementById("rollImage10").src = "dice" + die10Value + ".jpg";
+ 
+    
   } 
 
   
@@ -171,37 +108,63 @@ document.getElementById("rollComputerDisplay").innerHTML = "The Computer rolled 
 
 </head>
 <body> 
+  
 <p id = "winDisplay"> Roll Against A Computer - Goal is to Roll a 21 </p>
+  <br> 
+  <p id = "rollComputerDisplay"> 
+    Computer Total: 
+    </p> 
+<p id = "computerWins"> 
+Score:
+</p>
+  
   <div> 
   <img id = "rollImage1" src = "dice1.jpg" height = 100px width = 100px> 
-  </div>
-   <div>
+    <input type = "checkbox"> 
   <img id = "rollImage2" src = "dice1.jpg" height = 100px width = 100px> 
-   </div> 
-   <div> 
+     <input type = "checkbox"> 
   <img id = "rollImage3" src = "dice1.jpg" height = 100px width = 100px> 
-   </div>
-   <div>
+     <input type = "checkbox"> 
   <img id = "rollImage4" src = "dice1.jpg" height = 100px width = 100px>
-   </div>
-   <div>
+     <input type = "checkbox"> 
   <img id = "rollImage5" src = "dice1.jpg" height = 100px width = 100px> 
+     <input type = "checkbox"> 
    </div>
+  <br> 
+  <br> 
+  <br> 
+  <br>
    <div>
   <img id = "rollImage6" src = "dice1.jpg" height = 100px width = 100px>
-   </div>
-   <div>
+     <input type = "checkbox"> 
+   
   <img id = "rollImage7" src = "dice1.jpg" height = 100px width = 100px> 
-   </div>
-   <div>
+     <input type = "checkbox"> 
+   
   <img id = "rollImage8" src = "dice1.jpg" height = 100px width = 100px> 
-   </div>
-   <div>
+     <input type = "checkbox"> 
+   
   <img id = "rollImage9" src = "dice1.jpg" height = 100px width = 100px> 
-   </div>
-    <div>
+     <input type = "checkbox"> 
+  
   <img id = "rollImage10" src = "dice1.jpg" height = 100px width = 100px> 
+      <input type = "checkbox"> 
     </div>
+   <p id = "rollHumanDisplay"> 
+    Human Total: 
+    </p> 
+<p id = "humanWins"> 
+ Score:
+</p>
+
+  <div> 
+  <button id = "clearAllButton" onclick = "clearRound()"> Clear Round
+  </button> 
+  <br> 
+ 
+    <button id = "rollButton" enabled = "true" onclick = "rollDice()"> Roll Again
+    </button>  
+    
  
  
 </body>
