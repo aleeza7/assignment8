@@ -21,18 +21,26 @@ var computerCountArray= [1, 2, 3, 4, 5, 6];
 var checkBoxArray = ["check1", "check2", "check3", "check4", "check5", "check6", "check7", "check8", "check9", "check10"];
 
   function rollDice() {
+    document.getElementById("winDisplay").innerHTML = ""; 
 
-die1Value = [Math.floor(Math.random() * 6) + 1];
-die2Value = [Math.floor(Math.random() * 6) + 1];
-die3Value = [Math.floor(Math.random() * 6) + 1];
-die4Value = [Math.floor(Math.random() * 6) + 1];
-die5Value = [Math.floor(Math.random() * 6) + 1];
+die1Value = (Math.floor(Math.random() * 6) + 1);
+die2Value = (Math.floor(Math.random() * 6) + 1);
+die3Value = (Math.floor(Math.random() * 6) + 1);
+die4Value = (Math.floor(Math.random() * 6) + 1);
+die5Value = (Math.floor(Math.random() * 6) + 1);
 
-die6Value = [Math.floor(Math.random() * 6) + 1];
-die7Value = [Math.floor(Math.random() * 6) + 1];
-die8Value = [Math.floor(Math.random() * 6) + 1];
-die9Value = [Math.floor(Math.random() * 6) + 1];
-die10Value = [Math.floor(Math.random() * 6) + 1];
+
+        document.getElementById("check6").disabled = true; 
+     document.getElementById("check7").disabled = true; 
+     document.getElementById("check8").disabled = true; 
+     document.getElementById("check9").disabled = true; 
+     document.getElementById("check10").disabled = true; 
+
+    document.getElementById("check6").disabled = false; 
+     document.getElementById("check7").disabled = false; 
+     document.getElementById("check8").disabled = false; 
+     document.getElementById("check9").disabled = false; 
+     document.getElementById("check10").disabled = false; 
 
   
 document.getElementById("rollImage1").src = "dice" + die1Value + ".jpg";
@@ -46,12 +54,17 @@ document.getElementById("rollImage8").src = "dice" + die8Value + ".jpg";
 document.getElementById("rollImage9").src = "dice" + die9Value + ".jpg";
 document.getElementById("rollImage10").src = "dice" + die10Value + ".jpg";
 
-finalRollHuman = die1Value + die2Value + die3Value + die4Value + die5Value;
+    finalRollHuman = 0;
+finalRollHuman = die6Value + die7Value + die8Value + die9Value + die10Value;
 document.getElementById("rollHumanDisplay").innerHTML = "You've rolled a " + finalRollHuman;
 
-finalRollComputer = die6Value + die7Value + die8Value + die9Value + die10Value;
+    finalRollComputer = 0;
+finalRollComputer =  die1Value + die2Value + die3Value + die4Value + die5Value;
 document.getElementById("rollComputerDisplay").innerHTML = "The Computer rolled a " + finalRollComputer; 
+    
+    
 
+    
     if (finalRollComputer==21) {
       document.getElementById("winDisplay").innerHTML = "Computer Wins!";
       computerWinCount++;
@@ -70,26 +83,29 @@ document.getElementById("rollComputerDisplay").innerHTML = "The Computer rolled 
     document.getElementById("rollButton").enabled = false; 
 
     
-    if (document.getElementById("check1").checked = true ) {
+    if (document.getElementById("check6").checked == false ) {
+      die6Value = (Math.floor(Math.random() * 6) + 1);
+    }
+     
+
+      if (document.getElementById("check7").checked == false ) {
+      die7Value = (Math.floor(Math.random() * 6) + 1);
       
-      die1Value = checkBoxArray[Math.floor(Math.random() * 6) + 1]; 
+    }
+      if (document.getElementById("check8").checked == false ) {
+      die8Value = (Math.floor(Math.random() * 6) + 1);
+      
+    }
+        if (document.getElementById("check9").checked == false ) {
+      die9Value = (Math.floor(Math.random() * 6) + 1);
+      
     }
     
-  //  for (i=0; i<checkBoxArray.length; i++)
-   // {
- 
-      //  if (checkBoxArray[i].unchecked)
-       // {
-          //  checkBoxArray[i].checked = true;
-       //   die[i+1]Value = [Math.floor(Math.random() * 6) + 1];
-      //  } else {
-          //  checkBoxArray[i].checked = false;
-        //   die[i+1]Value =  die[i+1]Value 
-          
-     //   }
 
-// } 
-    
+        if (document.getElementById("check10").checked == false ) {
+      die10Value = (Math.floor(Math.random() * 6) + 1);
+      
+    }
 
     
                  
@@ -143,15 +159,15 @@ Score:
   
   <div> 
   <img id = "rollImage1" src = "dice1.jpg" height = 100px width = 100px> 
-    <input type = "checkbox" id = "check1"> 
+    <input type = "checkbox" id = "check1" disabled> 
   <img id = "rollImage2" src = "dice1.jpg" height = 100px width = 100px> 
-     <input type = "checkbox" id = "check2"> 
+     <input type = "checkbox" id = "check2" disabled> 
   <img id = "rollImage3" src = "dice1.jpg" height = 100px width = 100px> 
-     <input type = "checkbox" id = "check3"> 
+     <input type = "checkbox" id = "check3" disabled> 
   <img id = "rollImage4" src = "dice1.jpg" height = 100px width = 100px>
-     <input type = "checkbox" id = "check4"> 
+     <input type = "checkbox" id = "check4" disabled> 
   <img id = "rollImage5" src = "dice1.jpg" height = 100px width = 100px> 
-     <input type = "checkbox" id = "check5"> 
+     <input type = "checkbox" id = "check5" disabled> 
    </div>
   <br> 
   <br> 
@@ -159,19 +175,19 @@ Score:
   <br>
    <div>
   <img id = "rollImage6" src = "dice1.jpg" height = 100px width = 100px>
-     <input type = "checkbox"> 
+     <input type = "checkbox" id = "check6" disabled > 
    
   <img id = "rollImage7" src = "dice1.jpg" height = 100px width = 100px> 
-     <input type = "checkbox"> 
+     <input type = "checkbox" id = "check7" disabled > 
    
   <img id = "rollImage8" src = "dice1.jpg" height = 100px width = 100px> 
-     <input type = "checkbox"> 
+     <input type = "checkbox" id = "check8" disabled > 
    
   <img id = "rollImage9" src = "dice1.jpg" height = 100px width = 100px> 
-     <input type = "checkbox"> 
+     <input type = "checkbox" id = "check9" disabled > 
   
   <img id = "rollImage10" src = "dice1.jpg" height = 100px width = 100px> 
-      <input type = "checkbox"> 
+      <input type = "checkbox" id = "check10" disabled > 
     </div>
    <p id = "rollHumanDisplay"> 
     Human Total: 
