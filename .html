@@ -27,31 +27,37 @@ var computerCountArray= [1, 2, 3, 4, 5, 6];
     
     document.getElementById("winDisplay").innerHTML = "Keep Rolling!"; 
          
-    for (i=1; i<randomRollArray.length; i++) {
-    if ( 2 < randomRollArray[i] && randomRollArray[i] < 5 && counterCounter == 0) 
-    // checks if the value of each computer's die is between 2 and 5 
-     { 
-    document.getElementById( "check" + [i+1]).checked = true;
-    // this checks the box that the die corresponds to 
-
-      counterCounter++; 
-      // also adds one to the counter so it is not repeated again
+    if (die1Value == 4 && die1Value == 5) {    
+document.getElementById("check1").checked == false
     }
-      if (document.getElementById("check" + [i+1]).checked == false ) {
-         "die[i+1]Value" = (Math.floor(Math.random() * 6) + 1);
-         // if the check box is unchecked, the die's value will change to a random number, instead of keeping it
+
+     if (die2Value == 4) {    
+document.getElementById("check2").checked == true
+       else {
+       die1Value = (Math.floor(Math.random() * 6) + 1);
      }
-     
     }
-
   
-
+      if (die3Value == 4) {    
+document.getElementById("check3").checked == true
+        else {
+        die2Value = (Math.floor(Math.random() * 6) + 1);
+      }
+    }
+      if (die4Value == 4) {    
+document.getElementById("check4").checked == true
+        else {
+        die3Value = (Math.floor(Math.random() * 6) + 1);
+      }
+    }
+      if (die5Value == 4 && die1Value == 5) {    
+document.getElementById("check5").checked == true
+        else {
+        die5Value = (Math.floor(Math.random() * 6) + 1);
+      }
+    }
       
-//die1Value = (Math.floor(Math.random() * 6) + 1);
-//die2Value = (Math.floor(Math.random() * 6) + 1);
-//die3Value = (Math.floor(Math.random() * 6) + 1);
-//die4Value = (Math.floor(Math.random() * 6) + 1);
-//die5Value = (Math.floor(Math.random() * 6) + 1);
+
 
 
         document.getElementById("check6").disabled = true; 
