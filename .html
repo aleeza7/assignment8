@@ -29,38 +29,37 @@ var computerCountArray= [1, 2, 3, 4, 5, 6];
          
     if (die1Value == 4 && die1Value == 5) {   
 document.getElementById("check1").checked == true
+    }
       else {
       die1Value = (Math.floor(Math.random() * 6) + 1);
-    }
     }
 
      if (die2Value == 4) {    
 document.getElementById("check2").checked == true
+     }
        else {
        die2Value = (Math.floor(Math.random() * 6) + 1);
      }
-    }
+    
   
       if (die3Value == 4) {    
 document.getElementById("check3").checked == true
+      }
         else {
         die3Value = (Math.floor(Math.random() * 6) + 1);
       }
-    }
-      if (die4Value == 4) {    
-document.getElementById("check4").checked == true
-        else {
+    
+ 
         die4Value = (Math.floor(Math.random() * 6) + 1);
-      }
-    }
-      if (die5Value == 4 && die1Value == 5) {    
-document.getElementById("check5").checked == true
+      
+  
+
+      
+  if (die5Value == 5) {    
+document.getElementById("check4").checked == true }
         else {
         die5Value = (Math.floor(Math.random() * 6) + 1);
       }
-    }
-      
-
 
 
         document.getElementById("check6").disabled = true; 
@@ -177,6 +176,12 @@ document.getElementById("rollImage8").src = "dice" + die8Value + ".jpg";
 document.getElementById("rollImage9").src = "dice" + die9Value + ".jpg";
 document.getElementById("rollImage10").src = "dice" + die10Value + ".jpg";
  
+    document.getElementById("check1").checked == false;
+    document.getElementById("check2").checked == false;
+    document.getElementById("check3").checked == false;
+    document.getElementById("check4").checked == false;
+    document.getElementById("check5").checked == false;
+    
     document.getElementById("check6").checked == false;
     document.getElementById("check7").checked == false;
     document.getElementById("check8").checked == false;
